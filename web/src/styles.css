@@ -1,0 +1,395 @@
+:root {
+  --bg: #f5f6fa;
+  --surface: #ffffff;
+  --ink: #1b1f2a;
+  --ink-soft: #5f6779;
+  --line: #e3e6ef;
+  --accent: #4f46e5;
+  --accent-soft: #eef0fe;
+  --danger: #c02b2b;
+  --radius: 14px;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 15% -10%, #e7e9ff 0%, transparent 55%),
+    var(--bg);
+  color: var(--ink);
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2 {
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+.app {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 40px 20px 64px;
+}
+
+.app-header {
+  margin-bottom: 26px;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.app-header h1 {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  max-width: 56ch;
+  color: var(--ink-soft);
+}
+
+.alert {
+  margin: 0 0 18px;
+  padding: 12px 14px;
+  border: 1px solid #f3c9c9;
+  border-radius: 10px;
+  background: #fdf1f1;
+  color: var(--danger);
+}
+
+/* Summary */
+.summary {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.summary-main,
+.summary-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.summary-main {
+  background: linear-gradient(140deg, var(--accent-soft), #ffffff 70%);
+  border-color: #dcdefb;
+}
+
+.summary-label {
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.summary-value {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.summary-note {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.summary-main.great .summary-value {
+  color: #1f7a4d;
+}
+
+.summary-main.good .summary-value {
+  color: #2c6cb0;
+}
+
+.summary-main.fair .summary-value {
+  color: #9a6412;
+}
+
+.summary-main.low .summary-value {
+  color: var(--danger);
+}
+
+/* Add semester */
+.add-semester {
+  margin-bottom: 24px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.add-semester label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.add-semester-row {
+  display: flex;
+  gap: 10px;
+}
+
+.add-semester-row input {
+  flex: 1;
+}
+
+input[type='text'] {
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+input[type='text']:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+select {
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+button {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease, opacity 120ms ease;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.primary {
+  padding: 10px 16px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.primary:hover:not(:disabled) {
+  background: #4339d0;
+}
+
+.ghost {
+  padding: 6px 10px;
+  background: transparent;
+  border-color: var(--line);
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.ghost:hover:not(:disabled) {
+  border-color: #cfd4e2;
+  background: #f7f8fc;
+}
+
+.ghost.danger:hover:not(:disabled) {
+  border-color: #efc4c4;
+  background: #fdf3f3;
+  color: var(--danger);
+}
+
+/* Semesters */
+.semesters {
+  display: grid;
+  gap: 16px;
+}
+
+.semester {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.semester-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.semester-header h2 {
+  font-size: 19px;
+  font-weight: 650;
+}
+
+.semester-meta {
+  margin: 2px 0 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.semester-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.gpa-badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.gpa-badge strong {
+  font-weight: 700;
+}
+
+/* Courses table */
+.courses {
+  width: 100%;
+  margin-bottom: 14px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.courses th {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.courses td {
+  padding: 8px;
+  border-bottom: 1px solid #f0f2f8;
+  vertical-align: middle;
+}
+
+.courses tr:last-child td {
+  border-bottom: none;
+}
+
+.grade-select {
+  padding: 4px 6px;
+}
+
+.row-actions {
+  text-align: right;
+}
+
+.course-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+}
+
+.course-form input[type='text'] {
+  flex: 1 1 190px;
+}
+
+.grade-hint {
+  color: var(--ink-soft);
+  font-size: 12px;
+}
+
+.empty {
+  padding: 26px 20px;
+  border: 1px dashed #d5d9e6;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.app-footer {
+  margin-top: 32px;
+  color: #8b92a3;
+  font-size: 12px;
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 620px) {
+  .app {
+    padding: 26px 14px 48px;
+  }
+
+  .app-header h1 {
+    font-size: 27px;
+  }
+
+  .summary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .summary-main {
+    grid-column: 1 / -1;
+  }
+
+  .add-semester-row {
+    flex-direction: column;
+  }
+
+  .semester {
+    padding: 16px;
+  }
+
+  .courses {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
